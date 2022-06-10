@@ -1,0 +1,454 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Страница с ссылками {% endblock %}
+
+{% block content %}
+
+<div class="pricing-table">
+
+		<!--<div class="row row-cols-1 row-cols-lg-3">
+						<div class="col">
+							<div class="card mb-5 mb-lg-0">
+								<div class="card-header bg-danger py-3 text-center" style="height:110px">
+									<h4 class="card-title text-white text-uppercase text-center">Простой</h4>
+									<p style="color:#fff; font-size:1.3em">Самый простой способ списания долгов</p>
+								</div>
+								<div class="card-body">
+									<h6 class="card-price text-black text-center">7 500<span class="term"> руб</span></h6>
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item"><i class="bx bx-check me-2 font-18"></i>Не более 89 000 руб</li>
+										<li class="list-group-item"><i class="bx bx-check me-2 font-18"></i>Рассрочка до 6 месяцев</li>
+										<li class="list-group-item"><i class="bx bx-check me-2 font-18"></i>Освобождение от кредитов и долгов с момента заключения договора</li>
+
+									</ul>
+
+								</div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="card mb-5 mb-lg-0">
+								<div class="card-header bg-primary py-3 text-center" style="height:110px">
+									<h4 class="card-title text-white text-uppercase text-center">Стандартный</h4>
+									<p style="color:#fff; font-size:1.3em">Стандартное списание кредитов и долгов</p>
+								</div>
+								<div class="card-body">
+									<h6 class="card-price text-black text-center">10 000<span class="term"> руб</span></h6>
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item"><i class="bx bx-check me-2 font-18"></i>Не более 125 000 руб</li>
+										<li class="list-group-item"><i class="bx bx-check me-2 font-18"></i>Рассрочка до 12 месяцев</li>
+										<li class="list-group-item"><i class="bx bx-check me-2 font-18"></i>Освобождение от кредитов и долгов с момента заключения договора</li>
+
+									</ul>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="col">
+							<div class="card mb-5 mb-lg-0">
+								<div class="card-header bg-warning py-3 text-center" style="height:110px">
+									<h4 class="card-title text-white text-uppercase text-center">Индивидуальный</h4>
+									<p style="color:#fff; font-size:1.3em">Списание кредитов и долгов / уменьшение платежей</p>
+								</div>
+								<div class="card-body">
+									<h6 class="card-price text-black text-center">20 000<span class="term"> руб</span></h6>
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item"><i class="bx bx-check me-2 font-18"></i>Индивидуальные условия</li>
+										<li class="list-group-item"><i class="bx bx-check me-2 font-18"></i>Индивидуальная рассрочка</li>
+										<li class="list-group-item"><i class="bx bx-check me-2 font-18"></i>Освобождение от оплаты кредитов и долгов с момента заключения договора</li>
+
+									</ul>
+
+								</div>
+							</div>
+						</div>
+					</div> -->
+	<!--<div id="invoice">
+							<div class="invoice overflow-auto mt-3" style="background-color:transparent;min-height:0">
+								<div>
+									<main class="p-0">
+										<div class="notices">
+											<div class="notice" style="font-size:1.5em">
+												<p><span style="font-weight:800">АКЦИЯ: </span>Заполните Анкету и оплатите выбранный формат в течение 3 дней, и получите скидку
+													2 000 руб. Вы уже остановите рост долгов и освободитесь от оплаты по всем кредитам!</p>
+											<p><span style="font-weight:800">В указанные условия НЕ ВКЛЮЧЕНЫ: </span><br>
+обязательные расходы на публикации (15 000 Р.), оплата депозита (25 000 Р.) суда и гос. пошлина (300 Р.)
+											</p></div>
+										</div>
+									</main>
+								</div
+								<div></div>
+							</div>
+						</div>
+-->
+				</div>
+
+
+
+<div class="row">
+					<div class="col-xl-7 mx-auto">
+						<h3 class="mb-0 mt-5 text-uppercase text-center">Анкета клиента</h3>
+						<p class="mt-3" style="font-size:1.5em">Заполните Анкету ниже, укажите максимально точную информацию, чтобы наши специалисты могли подобрать и утвердить с Вами лучший вариант списания кредитов и долгов, либо уменьшения
+							платежей	по кредитам.<p>
+<p style="font-size:1.5em">(!) Заполните информацию максимально точно и полно. Это поможет нам подобрать больше самых выгодных вариантов.</p>
+						<hr>
+						<div class="card border-top border-0 border-4 border-primary">
+							<div class="card-body p-5">
+								<div class="card-title d-flex align-items-center">
+									<div><i class="bx bxs-user me-1 font-22 text-primary"></i>
+									</div>
+									<h5 class="mb-0 text-primary">Анкета клиента</h5>
+								</div>
+								<hr>
+								<form class="row g-3" id="form1" method="POST" action="">
+									{% csrf_token %}
+									<!-- Фамилия -->
+									<div class="col-md-4">
+										<label for="inputSurname" class="form-label">Фамилия</label>
+										<input type="text" class="form-control" name="Фамилия" id="inputSurname" required>
+									</div>
+
+									<!-- Имя -->
+									<div class="col-md-4">
+										<label for="inputName" class="form-label">Имя</label>
+										<input type="text" class="form-control" name="Имя" id="inputName" required>
+									</div>
+
+									<!-- Отчество -->
+									<div class="col-md-4">
+										<label for="inpuLastName" class="form-label">Отчество</label>
+										<input type="text" class="form-control" name="Отчество" id="inpuLastName" required>
+									</div>
+
+									<!-- Укажите, в связи с чем сложилось сложное финансовое положение -->
+									<div class="col-12 form_item">
+										<label for="financialPosition" class="form-label">Укажите, в связи с чем сложилось сложное финансовое положение</label>
+										<textarea class="form-control" id="financialPosition" name="Сложное финансовое положение"
+												  placeholder="Например: меня уволили / сократили / снизили оклад, пришлось взять кредиты, которые теперь не в состоянии выплатить."
+												  rows="3" required></textarea>
+									</div>
+
+									<!-- Место Вашего фактического проживания -->
+									<div class="col-md-12 form_item">
+										<label for="actualResidence" name="Вариант списания" class="form-label">Место Вашего фактического проживания</label>
+										<select id="actualResidence" class="form-select" name="Место фактического проживания" required>
+											<option value=""></option>
+											{% for item in mesto %}
+												<option value="{{item.idRegion}}">{{item.region}}</option>
+											{% endfor %}
+
+
+
+										</select>
+									</div>
+
+									<!-- Место Вашей регистрации по паспорту -->
+										<div class="col-md-12 form_item">
+										<label for="placeOfRegistration" name="Место регистрации" class="form-label">Место Вашей регистрации по паспорту</label>
+										<select id="placeOfRegistration" class="form-select" name="Место регистрации" required>
+											<option value=""></option>
+											{% for item in region %}
+												<option value="{{item.idRegion}}">{{item.region}}</option>
+											{% endfor %}
+										</select>
+									</div>
+
+
+									<!-- Какая у Вас сумма ВСЕХ кредитов и долгов? -->
+									<div class="col-md-12 form_item">
+										<label for="summKredit" class="form-label">Какая у Вас сумма ВСЕХ кредитов и долгов?</label>
+										<select id="summKredit" class="form-select" name="Сумма ВСЕХ кредитов" required>
+											<option value=""></option>
+											<option>до 200 000</option>
+											<option>от 200 000 до 500 000</option>
+											<option>от 500 000 до 1 000 000</option>
+											<option>от 1 000 000 до 5 000 000</option>
+											<option>Более 5 000 000</option>
+										</select>
+									</div>
+
+									<!-- Какие кредиты и обязательства у Вас есть? -->
+									<div class="card-body form_item">
+										<div class="checkbox-group required">
+									<p>Какие кредиты и обязательства у Вас есть?</p>
+										<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="Займы в МФО" id="Займы в МФО" name="Обязательства и кредиты[]">
+									<label class="form-check-label" for="Займы в МФО">Займы в МФО</label>
+										</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Займы у частных лиц" id="loansFromIndividuals" name="Обязательства и кредиты[]">
+										<label class="form-check-label" for="loansFromIndividuals">Займы у частных лиц</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Кредитные карты" id="creditСard" name="Обязательства и кредиты[]">
+										<label class="form-check-label" for="creditСard">Кредитные карты</label>
+									</div>
+										<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Потребительские кредиты" id="consumerLoans" name="Обязательства и кредиты[]">
+										<label class="form-check-label" for="consumerLoans">Потребительские кредиты</label>
+									</div>
+										<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Кредит под залог автомобиля" id="carLoan" name="Обязательства и кредиты[]">
+										<label class="form-check-label" for="carLoan">Кредит под залог автомобиля</label>
+										</div>
+										<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Кредит под залог недвижимости" id="estateLoan" name="Обязательства и кредиты[]">
+										<label class="form-check-label" for="estateLoan">Кредит под залог недвижимости</label>
+										</div>
+											<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="Ипотека" id="mortgage" name="Обязательства и кредиты[]">
+									<label class="form-check-label" for="mortgage">Ипотека</label>
+								</div>
+
+																						<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="Налоговая задолженность" id="nalog" name="Обязательства и кредиты[]">
+									<label class="form-check-label" for="nalog">Налоговая задолженность </label>
+								</div>
+
+																						<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="Штрафы ГИБДД" id="gibdd" name="Обязательства и кредиты[]">
+									<label class="form-check-label" for="mortgage">Штрафы ГИБДД</label>
+								</div>
+
+																						<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="Долги по ЖКХ" id="jkh" name="Обязательства и кредиты[]">
+									<label class="form-check-label" for="jkh">Долги по ЖКХ</label>
+								</div>
+<div>
+							</div>
+
+									<!-- У Вас есть просрочки по кредитам в данный момент? -->
+										<div class="col-md-12 form_item">
+										<label for="delays" class="form-label">У Вас есть просрочки по кредитам в данный момент?</label>
+										<select id="delays" name="Просрочки по кредитам" class="form-select">
+											<option selected="">Нет</option>
+											<option>До 1 месяца</option>
+											<option>До 3 месяцев</option>
+											<option>Более 3 месяцев</option>
+										</select>
+									</div>
+
+									<!-- Какой Ваш ежемесячный платёж по ВСЕМ кредитам? -->
+									<div class="col-md-12 form_item">
+										<label for="payments"  class="form-label">Какой Ваш ежемесячный платёж по ВСЕМ кредитам?</label>
+										<select id="payments" class="form-select" name="Ежемесячный платёж">
+											<option selected="">До 10 000 руб / мес</option>
+											<option>От 10 000 - 15 000 руб / мес</option>
+											<option>От 15 000 - 30 000 руб / мес</option>
+											<option>От 30 000 - 50 000 руб / мес</option>
+											<option>Более 50 000 руб / мес</option>
+										</select>
+									</div>
+
+									<!-- Когда у Вас ближайший платёж по любому из кредитов? -->
+									<div class="col-md-12 form_item">
+										<label for="nextLoanPayment" class="form-label">Когда у Вас ближайший платёж по любому из кредитов?</label>
+										<input type="text" class="form-control" id="nextLoanPayment" name="Ближайший платёж" placeholder="Пример: 02.02.2020">
+									</div>
+
+									<!-- Есть ли у Вас имущество в данный момент? -->
+									<div class="card-body form_item">
+									<label for="inputCity" class="form-label">Есть ли у Вас имущество в данный момент?</label>
+										<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="Ничего не зарегистрировано" id="propertyNo" name="Имущество в данный момент[]">
+									<label class="form-check-label" for="propertyNo">Ничего не зарегистрировано</label>
+										</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Автомобиль, зарегистрированный на меня" id="automobile" name="Имущество в данный момент[]">
+										<label class="form-check-label" for="automobile">Автомобиль, зарегистрированный на меня</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Квартира, зарегистрированная на меня (без ипотеки)" id="flatOnMeNotMortgage" name="Имущество в данный момент[]">
+										<label class="form-check-label" for="flatOnMeNotMortgage">Квартира, зарегистрированная на меня (без ипотеки)</label>
+									</div>
+										<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Квартира, зарегистрированная на меня (ипотека)" id="flatOnMeMortgage" name="Имущество в данный момент[]">
+										<label class="form-check-label" for="flatOnMeMortgage">Квартира, зарегистрированная на меня (ипотека)</label>
+									</div>
+										<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Вторая квартира или дом, зарегистрированные на меня" id="mySecondApartment" name="Имущество в данный момент[]">
+										<label class="form-check-label" for="mySecondApartment">Вторая квартира или дом, зарегистрированные на меня</label>
+										</div>
+										<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Кредит под залог недвижимости" id="securedLoan" name="Имущество в данный момент[]">
+										<label class="form-check-label" for="securedLoan">Кредит под залог недвижимости</label>
+										</div>
+									<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="Гараж, зарегистрированный на меня" id="garage" name="Имущество в данный момент[]">
+									<label class="form-check-label" for="garage">Гараж, зарегистрированный на меня</label>
+									</div>
+									<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="Земельный участок, зарегистрированный на меня" id="landPlot" name="Имущество в данный момент[]">
+									<label class="form-check-label" for="landPlot">Земельный участок, зарегистрированный на меня</label>
+									</div>
+									<div class="form-check">
+									<input class="form-check-input" type="checkbox" id="commercialRealEstate" name="Имущество в данный момент: Коммерческая" value="Имущество в данный момент[]">
+									<label class="form-check-label" for="commercialRealEstate">Коммерческая недвижимость, зарегистрированная на меня</label>
+									</div>
+
+							</div>
+
+									<!-- Совершали ли Вы сделки купли-продажи недвижимости за последние 3 года? -->
+									<div class="card-body form_item">
+									<label for="inputCity" class="form-label">Совершали ли Вы сделки купли-продажи недвижимости за последние 3 года?</label>
+										<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="Ничего не продавал и не покупал" id="didNotSellAnything" name="Сделки[]">
+									<label class="form-check-label" for="didNotSellAnything">Ничего не продавал и не покупал</label>
+										</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Продал квартиру или дом" id="soldTheApartment" name="Сделки[]">
+										<label class="form-check-label" for="soldTheApartment">Продал квартиру или дом</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Продал землю" id="soldTheLand" name="Сделки[]">
+										<label class="form-check-label" for="soldTheLand">Продал землю</label>
+									</div>
+										<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Продал автомобиль" id="soldTheCar" name="Сделки[]">
+										<label class="form-check-label" for="soldTheCar">Продал автомобиль</label>
+									</div>
+										<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Продал коммерческую недвижимость" id="saleCommercialEstate" name="Сделки[]">
+										<label class="form-check-label" for="saleCommercialEstate">Продал коммерческую недвижимость</label>
+										</div>
+
+
+							</div>
+
+									<!-- Есть ли у Вас не совершеннолетние дети или иждивенцы? -->
+									<div class="card-body form_item">
+									<label for="inputCity" class="form-label">Есть ли у Вас не совершеннолетние дети или иждивенцы?</label>
+										<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="Нет" id="childrenNo" name="Дети[]">
+									<label class="form-check-label" for="childrenNo">Нет</label>
+										</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Есть иждивенцы на попечении" id="childrenDependents" name="Дети[]">
+										<label class="form-check-label" for="childrenDependents">Есть иждивенцы на попечении</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Есть дети до 18 лет" id="childrenBefore" name="Дети[]">
+										<label class="form-check-label" for="childrenBefore">Есть дети до 18 лет</label>
+									</div>
+
+
+							</div>
+
+									<!-- Какой у Вас фактический доход в данный момент? -->
+									<div class="col-md-12 form_item">
+										<label for="actualIncome" class="form-label">Какой у Вас фактический доход в данный момент?</label>
+										<select id="actualIncome" class="form-select" name="Фактический доход" required>
+											<option value=""></option>
+											<option>Я зарабатываю до 20 000 руб / мес</option>
+											<option>Я зарабатываю от 20 000 до 40 000 руб / мес</option>
+											<option>Я зарабатываю от 40 000 до 60 000 руб / мес</option>
+											<option>Я зарабатываю от 60 000 до 100 000 руб / мес</option>
+											<option>Я зарабатываю более 100 000 руб / мес</option>
+										</select>
+									</div>
+
+									<!-- Укажите, где и кем Вы фактически работаете -->
+									<div class="col-12 form_item">
+										<label for="inputAddress" class="form-label" >Укажите, где и кем Вы фактически работаете</label>
+										<textarea class="form-control" required placeholder="Например: работаю частным бухгалтером, обслуживаю несколько юридических лиц и ИП на дому" rows="3" name="Фактическая работа"></textarea>
+									</div>
+
+									<!-- Какой у Вас официальный доход по 2-НДФЛ (или 3-НДФЛ) -->
+									<div class="col-md-12 form_item">
+										<label for="inputState" class="form-label">Какой у Вас официальный доход по 2-НДФЛ (или 3-НДФЛ)</label>
+										<select id="inputState" class="form-select" name="Официальный доход 2НДФЛ" required>
+											<option value=""></option>
+											<option>Я официально зарабатываю до 20 000 руб / мес</option>
+											<option>Я официально зарабатывают от 20 000 руб до 40 000 руб / мес</option>
+											<option>Я официально зарабатывают от 40 000 руб до 60 000 руб / мес</option>
+											<option>Я официально зарабатывают от 60 000 руб до 100 000 руб / мес</option>
+											<option>Я официально зарабатывают более 100 000 руб / мес</option>
+										</select>
+									</div>
+									<div class="col-md-12 form_item">
+										<label for="poloj" class="form-label">Семейное положение</label>
+										<select id="poloj" class="form-select" name="Семейное положение" required>
+											<option value=""></option>
+											<option>Холост/Не замужем</option>
+											<option>В браке</option>
+										</select>
+									</div>
+									<!-- Дата рождения -->
+									<div class="col-md-12 form_item">
+										<label for="dateRoj" class="form-label">Дата рождения</label>
+										<p>Необходимо для проверки в ФССП и других источниках</p>
+										<input type="text" class="form-control birthday" placeholder="Пример: 02.02.2020" name="Дата рождения" required>
+									</div>
+
+									<!-- Серия, номер паспорта -->
+									<div class="col-md-12 form_item">
+										<label for="passport" class="form-label">Серия, номер паспорта</label>
+										<p>Необходим для быстрой проверки кредитной истории (это бесплатно)</p>
+										<input type="text" class="form-control"  placeholder="60 09 123456" name="Серия и номер паспорта" id="passport">
+									</div>
+
+									<!-- Дата выдачи паспорта -->
+									<div class="col-md-12 form_item">
+										<label for="datePasport" class="form-label">Дата выдачи паспорта</label>
+										<input type="text" class="form-control birthday" placeholder="Пример: 02.02.2020" name="Дата выдачи папорта" id="datePasport">
+									</div>
+
+									<!-- Ваш логин для доступа на портал гос. услуг -->
+									<div class="col-md-12 form_item">
+										<label for="inputCity" class="form-label">Ваш логин для доступа на портал гос. услуг</label>
+										<p>Доступ нужен для запроса выписки из ЦККИ и НБКИ, а также других бюро. Это необходимо для проверки кредитной истории (бесплатно)</p>
+										<input type="text" class="form-control" placeholder="Логин (телефон, почта или СНИЛС)" name="Логин">
+									</div>
+
+									<!-- Ваш пароль для доступа на портал гос. услуг -->
+									<div class="col-md-12 form_item">
+										<label for="inputCity" class="form-label">Ваш пароль для доступа на портал гос. услуг</label>
+										<input type="text" class="form-control" placeholder="Пароль" name="Пароль">
+									</div>
+
+									<!-- Чего бы Вы хотели добиться в конечном итоге? -->
+									<div class="col-12 form_item">
+										<label for="inputAddress" class="form-label">Чего бы Вы хотели добиться в конечном итоге?</label>
+										<textarea class="form-control" required id="inputAddress" placeholder="Я хотел(а) бы полностью списать кредиты и долги до 0 руб 00 коп" rows="3" name="Добиться в конечном итоге"></textarea>
+									</div>
+
+									<!-- Какой Вариант списания Вам больше подходит? -->
+									<div class="col-md-12 form_item">
+										<label for="paymentsPod" class="form-label">Какой Вариант списания Вам больше подходит?</label>
+										<select id="paymentsPod" class="form-select" name="Вариант списания" required>
+											<option value=""></option>
+											<option>Простой - первый платёж: 7 500 руб, но не более 89 000 руб</option>
+											<option>Стандартный - первый платёж: 10 000 руб, но не более 125 000 руб</option>
+											<option>Индивидуальный - индивидуальный тариф для не стандартных</option>
+										</select>
+									</div>
+
+									<!-- Ваш e-mail -->
+									<div class="col-md-12 form_item">
+										<label for="email" class="form-label">Ваш e-mail</label>
+										<input type="text" class="form-control" id="email" placeholder="mail@example.com" name="Email" required>
+									</div>
+
+									<!-- Контактный Телефон -->
+									<div class="col-md-12 form_item">
+										<label for="phone" class="form-label">Контактный Телефон</label>
+										<input type="text" class="form-control" id="phone" placeholder="+7(999) 999-99-99" name="phone" required>
+									</div>
+
+<!--									&lt;!&ndash; Телефон с WhatsUp (если есть) &ndash;&gt;-->
+<!--									<div class="col-md-12"87>-->
+<!--										<label for="inputCity" class="form-label">Телефон с WhatsApp (если есть)</label>-->
+<!--										<input type="text" class="form-control" id="inputCity" placeholder="+7(999) 999-99-99" name="phoneWhats">-->
+<!--									</div>-->
+
+
+									<div class="col-12 form_item">
+										<button type="submit" class="btn btn-primary px-5">Отправить</button>
+									</div>
+								</form>
+							</div>
+						</div>
+
+				</div>
+
+{% endblock %}
